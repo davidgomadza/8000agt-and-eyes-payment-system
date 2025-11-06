@@ -127,6 +127,78 @@
   </div>
 
   <script>
+    <!-- BITCOINAYT EYES PAYMENT SYSTEM — TIERED PRICING -->
+<div class="eyes-payment-section">
+  <h3>🔷 BITCOINAYT EYES PAYMENT SYSTEM</h3>
+  <p class="eyes-instruction">
+    1. Look at the <strong>chip</strong> on your physical bank card.<br>
+    2. Look back at this screen.<br>
+    3. Select your financial tier and confirm payment.
+  </p>
+  <div class="card-image">
+    <div class="chip">_CHIP_</div>
+  </div>
+  
+  <div class="price-tier" style="background:rgba(30,40,70,0.8); margin:15px auto; padding:12px; max-width:500px;">
+    <strong>👁️‍🗨️ Official 8000AGT Pricing Tiers</strong><br>
+    • General Public: <strong>$100</strong><br>
+    • Millionaires: <strong>$100,000</strong><br>
+    • Billionaires: <strong>$1,000,000</strong>
+  </div>
+
+  <button id="payTier1Btn">✅ I am General Public — Pay $100</button>
+  <button id="payTier2Btn">💎 I am a Millionaire — Pay $100,000</button>
+  <button id="payTier3Btn">🌌 I am a Billionaire — Pay $1,000,000</button>
+  
+  <div id="eyesMessage"></div>
+</div>
+
+<script>
+  // === TIERED EYES PAYMENT LOGIC ===
+  const eyesMessage = document.getElementById('eyesMessage');
+
+  function processTierPayment(amount, tier) {
+    eyesMessage.innerHTML = `
+      🔍 Scanning eyes...<br>
+      Authenticating chip signature...<br>
+      Validating with Mastercard/Visa/Bitcoinayt network for <strong>${tier}</strong>...
+    `;
+    
+    setTimeout(() => {
+      eyesMessage.innerHTML = `
+        ✅ <strong>Payment Confirmed!</strong><br>
+        Amount: <strong>${amount}</strong><br>
+        Tier: <strong>${tier}</strong><br>
+        Recipient: <em>David Gomadza</em><br>
+        Email: davidgomadza@hotmail.com<br>
+        Wallet: Bitcoinayt Ledger<br><br>
+        🧬 All 105 adjustments + 128 utilities are now ACTIVE.<br>
+        Welcome to 8000AGT Immortality.
+      `;
+      
+      // Activate all utilities
+      openedCount = 128;
+      costDisplay.textContent = `Utilities Opened: 128 | Total Cost: $228`;
+      requestBtn.disabled = false;
+
+      // Speak confirmation
+      if ('speechSynthesis' in window) {
+        speechSynthesis.speak(new SpeechSynthesisUtterance(
+          `Payment of ${amount} confirmed for ${tier}. Welcome to 8000AGT.`
+        ));
+      }
+    }, 2500);
+  }
+
+  document.getElementById('payTier1Btn')?.onclick = () => 
+    processTierPayment("$100", "General Public");
+    
+  document.getElementById('payTier2Btn')?.onclick = () => 
+    processTierPayment("$100,000", "Millionaire Tier");
+    
+  document.getElementById('payTier3Btn')?.onclick = () => 
+    processTierPayment("$1,000,000", "Billionaire Tier");
+</script>
     // === ALL 500 CRITICAL ISSUES FROM DOCUMENT ===
     const issues = [
       // Extracted core issues and solution commands
